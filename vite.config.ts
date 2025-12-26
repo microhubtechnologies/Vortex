@@ -63,7 +63,7 @@ import { metaImagesPlugin } from "./vite-plugin-meta-images";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  base: "/vortex/", // 🔥 MOST IMPORTANT
+  base: "/", // 🔥 MOST IMPORTANT
 
   plugins: [
     react(),
