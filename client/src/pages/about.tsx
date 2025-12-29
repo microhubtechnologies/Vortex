@@ -29,24 +29,36 @@ export default function About() {
   }, [])
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
-      <Navbar />
+  
       <main className="pt-32">
         {/* Hero Section */}
-        <section className="py-20 container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-6">
-              About Vortex
-            </h1>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Transforming spaces through professional painting services with attention to detail and premium finishes
-            </p>
-          </motion.div>
-        </section>
+<section className="relative py-20 px-6">
+  {/* ✅ Background Image or Color */}
+  <div className="absolute inset-0">
+    <img
+      src="./img3.jpg"
+      alt="About Vortex Background"
+      className="w-full h-full object-cover"
+    />
+    {/* ✅ Optional light overlay for readability */}
+    <div className="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  {/* Content */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="relative z-10 text-center max-w-2xl mx-auto"
+  >
+    <h1 className="text-5xl md:text-6xl font-display font-bold text-primary mb-6">
+      About Vortex
+    </h1>
+    <p className="text-lg text-white/90">
+      Transforming spaces through professional painting services with attention to detail and premium finishes
+    </p>
+  </motion.div>
+</section>
 
         {/* Vision Section with Values */}
         <section className="py-16 md:py-24 bg-card border-t border-border">
@@ -213,7 +225,11 @@ export default function About() {
         </section> */}
 
        
-        <section id="why-choose-us" className="py-20 md:py-32  border-t border-amber-200 bg-white relative overflow-hidden">
+       <section
+  id="why-choose-us"
+  className="pt-20 md:pt-28 pb-10 md:pb-14 border-t border-amber-200 bg-white relative overflow-hidden"
+>
+
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/5 rounded-full -mr-48 -mt-48 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/5 rounded-full -ml-48 -mb-48 blur-3xl" />
@@ -278,42 +294,27 @@ export default function About() {
           </div>
 
           {/* Right - Image placeholder with animation */}
-          <div
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-            }`}
-          >
-            <div className="relative h-96 md:h-full min-h-[500px] rounded-3xl overflow-hidden group">
-              {/* Decorative background pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 via-yellow-500 to-yellow-600 opacity-10" />
+      <div
+  className={`transition-all duration-1000 delay-300 ${
+    isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+  }`}
+>
+  <div className="relative h-full min-h-[500px] rounded-3xl overflow-hidden group shadow-xl">
+    
+    <img
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop"
+      alt="Professional Painting Work"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
 
-              {/* Geometric pattern background */}
-              <svg
-                className="absolute inset-0 w-full h-full opacity-20"
-                viewBox="0 0 400 500"
-                preserveAspectRatio="none"
-              >
-                <defs>
-                  <pattern id="geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                    <path d="M 0 40 L 40 0 L 80 40 L 40 80 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                  </pattern>
-                </defs>
-                <rect width="400" height="500" fill="url(#geo)" />
-              </svg>
+    {/* Optional overlay for premium look */}
+    <div className="absolute inset-0 bg-black/10" />
 
-              {/* Image placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 to-gray-900/30 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-yellow-600 mb-4 text-5xl">🎨</div>
-                  <p className="text-white font-semibold text-xl">Professional Painting</p>
-                  <p className="text-gray-300 text-sm mt-2">Your image here</p>
-                </div>
-              </div>
+    {/* Animated accent border */}
+    <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-yellow-500 via-transparent to-yellow-500 bg-clip-border opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+  </div>
+</div>
 
-              {/* Animated accent border */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-yellow-500 via-transparent to-yellow-500 bg-clip-border opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -321,7 +322,8 @@ export default function About() {
 
 
      {/* Values Section */}
-       <section className="py-16 md:py-24 border-t border-amber-200 bg-white">
+       <section className="pt-10 md:pt-14 pb-16 md:pb-24 border-t border-amber-200 bg-white">
+
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Section Header */}
@@ -388,7 +390,7 @@ export default function About() {
 
       </main>
        <CTA />
-      <Footer />
+    
     </div>
   );
 }

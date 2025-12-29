@@ -34,8 +34,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-   <section className="pt-12 pb-20 md:pt-16 md:pb-24 bg-[#FDFBF7]">
-
+<section className="pt-12 pb-6 md:pt-16 md:pb-12 bg-[#FDFBF7] relative">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div

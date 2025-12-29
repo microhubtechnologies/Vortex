@@ -18,10 +18,14 @@ export function CTA() {
           <div className="absolute top-0 left-0 right-0 h-2 bg-primary"></div>
           
           <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-            <div className="text-center">
-              <p className="text-lg font-medium">Your Project Image</p>
-              <p className="text-sm mt-2">Replace with your portfolio image</p>
-            </div>
+           
+              <img
+  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
+  alt="Project showcase"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
+           
           </div>
 
           {/* Hover overlay */}

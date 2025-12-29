@@ -2,23 +2,23 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import paintSplashGold from "@assets/generated_images/golden_yellow_paint_splash_stroke_on_transparent_background.png";
-
+import { Link } from "wouter";
 const projects = [
   {
-    title: "Luxury Living Room Painting",
-    category: "Interior Painting",
+    title: "Residential Interior Repaint",
+    category: "Home Painting",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    title: "Modern Bedroom Finish",
-    category: "Residential",
+    title: "Modern Home Exterior Finish",
+    category: "Residential Exterior",
     image:
       "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    title: "Accent Wall Design",
-    category: "Wall Painting",
+    title: "Feature & Accent Wall Project",
+    category: "Interior Detailing",
     image:
       "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1400&auto=format&fit=crop",
   },
@@ -49,10 +49,10 @@ export function Gallery() {
         {/* HEADER */}
         <div className="flex justify-between items-end mb-16">
           <div className="max-w-xl">
-             <span className="text-primary font-semibold tracking-wider uppercase text-sm">Our Complete Project</span>
+             <span className="text-primary font-semibold tracking-wider uppercase text-sm">Types of Work We Specialise In</span>
              <h2 className="text-4xl md:text-5xl mt-4 text-foreground">Our Quality Work</h2>
           </div>
-
+{/* 
           <div className="hidden md:flex gap-2">
             <Button variant="outline" size="icon" className="rounded-full">
               <ArrowUpRight className="rotate-180" />
@@ -60,7 +60,7 @@ export function Gallery() {
             <Button variant="outline" size="icon" className="rounded-full">
               <ArrowUpRight />
             </Button>
-          </div>
+          </div> */}
         </div>
 
         {/* GALLERY GRID */}
@@ -104,13 +104,16 @@ export function Gallery() {
                   </div>
 
                   {/* ACTION ICON */}
-                  <motion.div
-                    whileHover={{ rotate: 45, scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                    className="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center group-hover:bg-primary"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </motion.div>
+                 <Link href="/services">
+  <motion.div
+    whileHover={{ rotate: 45, scale: 1.1 }}
+    transition={{ duration: 0.4 }}
+    className="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center group-hover:bg-primary cursor-pointer"
+  >
+    <ArrowUpRight className="w-5 h-5" />
+  </motion.div>
+</Link>
+
                 </div>
               </div>
 

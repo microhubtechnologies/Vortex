@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import { Link } from "wouter";
 import {
   PaintRoller,
   Ruler,
@@ -63,7 +64,8 @@ export function Services() {
 
           {/* Route-aware Animated Heading */}
           <motion.h2
-            className="text-4xl md:text-5xl mt-4 text-foreground italic font-display flex justify-center"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground italic font-display flex justify-center text-center leading-tight"
+
             aria-label="Quality Services We Provide"
           >
             {"Quality Services We Provide".split("").map((char, index) => (
@@ -133,17 +135,22 @@ export function Services() {
                   {service.icon}
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 font-display">
+              <h3 className="text-lg md:text-xl font-bold mb-3 font-display leading-snug">
+
                   {service.title}
                 </h3>
 
-                <p className="text-muted-foreground leading-relaxed text-sm mb-6">
+              <p className="text-muted-foreground text-sm md:text-[15px] leading-relaxed mb-6">
+
                   {service.description}
                 </p>
 
-                <div className="flex items-center text-primary font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
-                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                </div>
+             <Link href="/about">
+  <div className="flex items-center cursor-pointer text-primary font-medium text-sm md:text-base"
+>
+    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+  </div>
+</Link>
               </div>
             </motion.div>
           ))}

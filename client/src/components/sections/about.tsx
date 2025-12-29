@@ -201,7 +201,7 @@ export function About() {
             </div>
 
             {/* SOCIAL PROOF */}
-            <div className="pt-6 border-t border-primary/10">
+            {/* <div className="pt-6 border-t border-primary/10">
               <div className="flex items-center gap-6">
                 <div className="flex -space-x-4">
                   {[1, 2, 3].map((i) => (
@@ -232,7 +232,7 @@ export function About() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

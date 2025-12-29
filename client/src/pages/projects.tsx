@@ -38,24 +38,32 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
-      <Navbar />
+
       <main className="pt-32">
         {/* Hero Section */}
-        <section className="py-20 container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-6">
-              Our Projects
-            </h1>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Showcasing our expertise across residential and commercial spaces
-            </p>
-          </motion.div>
-        </section>
+            <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+        <img
+          src="./img2.jpg"
+          alt="Projects Banner"
+          className="w-full h-full object-cover"
+        />
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute z-10 text-center px-6 max-w-3xl mx-auto"
+        >
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-primary mb-4">
+            Our Projects
+          </h1>
+          <p className="text-lg md:text-xl text-white/80">
+            Showcasing our expertise across residential and commercial spaces
+          </p>
+        </motion.div>
+      </section>
 
         {/* Projects Grid */}
         <section className="py-20 container mx-auto px-6">
@@ -103,7 +111,7 @@ export default function Projects() {
           </div>
         </section>
       </main>
-      <Footer />
+     
     </div>
   );
 }
