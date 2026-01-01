@@ -103,6 +103,8 @@ export function Gallery() {
 
                   {/* ACTION ICON */}
                  
+{/* ACTION ICON */}
+<Link href="/services">
   <motion.div
     whileHover={{ rotate: 45, scale: 1.1 }}
     transition={{ duration: 0.4 }}
@@ -110,6 +112,8 @@ export function Gallery() {
   >
     <ArrowUpRight className="w-5 h-5" />
   </motion.div>
+</Link>
+
 
 
                 </div>
