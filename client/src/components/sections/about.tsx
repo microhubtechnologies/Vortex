@@ -3,7 +3,7 @@ import { CheckCircle2, Users } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import { useEffect, useState } from "react";
 import paintSplashGold from "@assets/generated_images/golden_yellow_paint_splash_stroke_on_transparent_background.png";
-
+import { Link } from "wouter";
 export function About() {
   /* ===============================
      SAFE Experience Counter
@@ -67,7 +67,7 @@ export function About() {
         "
       >
         <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=1400&auto=format&fit=crop"
           alt="Painting work"
           className="w-full h-full object-cover"
         />
@@ -97,7 +97,8 @@ export function About() {
         "
       >
         <img
-          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=600&auto=format&fit=crop"
+          src="./contact2.jpg
+"
           alt="Detail painting"
           className="w-full h-full object-cover"
         />
@@ -199,6 +200,42 @@ export function About() {
 ))}
 
             </div>
+{/* CTA BUTTON */}
+
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="pt-6"
+>
+  <Link href="/about">
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.97 }}
+      className="
+        inline-flex
+        items-center
+        justify-center
+        px-7
+        py-3.5
+        rounded-full
+        bg-primary
+        text-white
+        font-sans
+        font-semibold
+        text-sm
+        tracking-wide
+        shadow-lg
+        hover:shadow-xl
+        transition-all
+        duration-300
+      "
+    >
+      Know More About Us
+    </motion.button>
+  </Link>
+</motion.div>
 
             {/* SOCIAL PROOF */}
             {/* <div className="pt-6 border-t border-primary/10">

@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import QuoteModal from "../../pages/Quote/Quote";
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
+ 
   { name: "About", href: "/about" },
+   { name: "Services", href: "/services" },
   // { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
   
@@ -83,12 +84,13 @@ export function Navbar() {
                   <Phone className="w-4 h-4" />
                   Get Quote
                 </Button> */}
-  <Button asChild className="rounded-full bg-primary px-6">
-    <Link href="/quote">
-      <Phone className="w-4 h-4 mr-2" />
-      Get Quote
-    </Link>
-  </Button>
+<Button asChild className="rounded-full bg-primary px-8 py-4 text-lg flex items-center gap-3">
+  <Link href="/quote" className="flex items-center">
+    <Phone className="w-6 h-6" /> {/* icon size bada kiya */}
+    Get Quote
+  </Link>
+</Button>
+
 </div>
 
 

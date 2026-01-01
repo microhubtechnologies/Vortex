@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import emailjs from "@emailjs/browser"
 
 import { useState } from "react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -14,6 +15,8 @@ interface QuoteModalProps {
 }
 
 export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
+  const [phoneError, setPhoneError] = useState("")
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,25 +34,51 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you can add your form submission logic
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault()
 
-    // Reset form after 2 seconds
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        projectType: "",
-        description: "",
-      })
-      onClose()
-    }, 2000)
+  if (!validatePhone(formData.phone)) {
+     setPhoneError("Please enter a valid New Zealand phone number")
+    return
   }
+
+  setPhoneError("")
+
+  emailjs.send(
+    "service_30jdq7q",
+    "template_5tmz68i",
+    formData,
+    "RmCuQgo3aebwBFwsq"
+  )
+  .then(
+    () => {
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectType: "",
+          description: "",
+        })
+        onClose()
+      }, 2000)
+    },
+    () => {
+      alert("Oops! Something went wrong.")
+    }
+  )
+}
+
+const validatePhone = (phone: string) => {
+  const nzRegex =
+    /^(?:\+64|0)(2\d{7,9}|[3-9]\d{7,8})$/
+
+  return nzRegex.test(phone)
+}
+
+
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -95,15 +124,22 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
               {/* Phone */}
               <div>
                 <label className="block text-sm font-semibold text-black mb-2">Phone Number *</label>
-                <Input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+1 (555) 000-0000"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 bg-white text-black placeholder:text-gray-400"
-                />
+              <Input
+  type="tel"
+  name="phone"
+  value={formData.phone}
+  onChange={(e) => {
+    handleChange(e)
+    setPhoneError("")
+  }}
+
+  required
+  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 bg-white text-black placeholder:text-gray-400"
+/>
+{phoneError && (
+  <p className="text-sm text-red-600 mt-1">{phoneError}</p>
+)}
+
               </div>
 
               {/* Project Type */}
@@ -141,7 +177,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
               <div className="flex gap-3 pt-4">
                 <Button
                   type="submit"
-                  className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 rounded-lg transition-colors"
+                  className="flex-1 bg-primaryhover:bg-primary-900 text-black font-bold py-2 rounded-lg transition-colors"
                 >
                   Send Quote Request
                 </Button>
@@ -149,7 +185,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                   type="button"
                   variant="outline"
                   onClick={onClose}
-                  className="flex-1 border-yellow-500 text-black hover:bg-yellow-50 bg-transparent"
+                  className="flex-1 border-primary text-black hover:bg-primary-50 bg-transparent"
                 >
                   Cancel
                 </Button>

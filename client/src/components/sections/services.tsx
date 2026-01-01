@@ -68,6 +68,7 @@ export function Services() {
 
             aria-label="Quality Services We Provide"
           >
+            
             {"Quality Services We Provide".split("").map((char, index) => (
               <motion.span
                 key={index}
@@ -140,20 +141,22 @@ export function Services() {
                   {service.title}
                 </h3>
 
-              <p className="text-muted-foreground text-sm md:text-[15px] leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm md:text-[15px] leading-relaxed mb-2">
+
 
                   {service.description}
                 </p>
 
-             <Link href="/about">
+             {/* <Link href="/about">
   <div className="flex items-center cursor-pointer text-primary font-medium text-sm md:text-base"
 >
     Learn More <ArrowRight className="w-4 h-4 ml-2" />
   </div>
-</Link>
+</Link> */}
               </div>
             </motion.div>
           ))}
+          
         </div>
       </div>
     </section>

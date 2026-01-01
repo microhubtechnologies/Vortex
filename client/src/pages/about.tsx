@@ -302,7 +302,10 @@ export default function About() {
   <div className="relative h-full min-h-[500px] rounded-3xl overflow-hidden group shadow-xl">
     
     <img
-      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop"
+      src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400&auto=format&fit=crop
+
+
+"
       alt="Professional Painting Work"
       className="absolute inset-0 w-full h-full object-cover"
     />

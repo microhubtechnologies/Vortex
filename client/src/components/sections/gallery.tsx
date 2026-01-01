@@ -5,24 +5,22 @@ import paintSplashGold from "@assets/generated_images/golden_yellow_paint_splash
 import { Link } from "wouter";
 const projects = [
   {
-    title: "Residential Interior Repaint",
-    category: "Home Painting",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
+    title: "Interior Painting Excellence",
+    category: "Residential Interiors",
+    image: "https://res.cloudinary.com/docmkkx8p/image/upload/v1767168846/img2_cqbesg.jpg",
   },
   {
-    title: "Modern Home Exterior Finish",
-    category: "Residential Exterior",
-    image:
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1400&auto=format&fit=crop",
+    title: "Durable Exterior Finishes",
+    category: "Exterior Painting",
+    image: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    title: "Feature & Accent Wall Project",
-    category: "Interior Detailing",
-    image:
-      "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1400&auto=format&fit=crop",
+    title: "Feature & Accent Wall Detailing",
+    category: "Detail-Oriented Work",
+    image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1400&auto=format&fit=crop",
   },
 ];
+
 
 export function Gallery() {
   return (
@@ -49,8 +47,8 @@ export function Gallery() {
         {/* HEADER */}
         <div className="flex justify-between items-end mb-16">
           <div className="max-w-xl">
-             <span className="text-primary font-semibold tracking-wider uppercase text-sm">Types of Work We Specialise In</span>
-             <h2 className="text-4xl md:text-5xl mt-4 text-foreground">Our Quality Work</h2>
+             <span className="text-primary font-semibold tracking-wider uppercase text-sm">  Our Craftsmanship</span>
+             <h2 className="text-4xl md:text-5xl mt-4 text-foreground">  Expert Painting Finishes</h2>
           </div>
 {/* 
           <div className="hidden md:flex gap-2">
@@ -104,7 +102,7 @@ export function Gallery() {
                   </div>
 
                   {/* ACTION ICON */}
-                 <Link href="/services">
+                 
   <motion.div
     whileHover={{ rotate: 45, scale: 1.1 }}
     transition={{ duration: 0.4 }}
@@ -112,7 +110,7 @@ export function Gallery() {
   >
     <ArrowUpRight className="w-5 h-5" />
   </motion.div>
-</Link>
+
 
                 </div>
               </div>

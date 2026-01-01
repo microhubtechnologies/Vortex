@@ -169,7 +169,7 @@ const faqs = [
   {
     id: 0,
     question: "What brand of paint do you use?",
-    answer: "We primarily use premium lines from Sherwin-Williams and Benjamin Moore. However, we are flexible and can use any specific brand you prefer if it meets our quality standards.",
+    answer: "We primarily use premium lines from Dulux and Resene. However, we are flexible and can use any specific brand you prefer if it meets our quality standards.",
     bullets: [
       "Premium quality paints",
       "Eco-friendly options available",
@@ -181,11 +181,12 @@ const faqs = [
     question: "Do I need to move my furniture before you start?",
     answer: "We prefer if you can move smaller items and breakables. Our team will happily move larger furniture pieces to the center of the room and cover them completely for protection."
   },
-  {
-    id: 2,
-    question: "Do you offer a warranty on your painting services?",
-    answer: "Yes, we offer a comprehensive 2-year warranty on all our labor and materials. If there are any peeling or blistering issues, we will fix them free of charge."
-  },
+{
+  id: 2,
+  question: "What types of paint do you use for interior and exterior walls?",
+  answer: "We use high-quality, eco-friendly paints from trusted brands that are durable, fade-resistant, and safe for your home environment."
+}
+,
   {
     id: 3,
     question: "How soon can you start my project?",

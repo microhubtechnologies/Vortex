@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/navbar";
-import { Check, Award, Shield } from "lucide-react";
+import { Check, Award, Shield ,Phone,ArrowRight} from "lucide-react";
 import { Testimonials } from "@/components/sections/testimonials";
-
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 const services = [
   {
     id: 1,
@@ -15,7 +16,7 @@ const services = [
       "Accent walls & features",
       "Eco-friendly materials",
     ],
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
+    image:"./res.jpg",
   },
   {
     id: 2,
@@ -27,7 +28,7 @@ const services = [
       "Quick turnaround",
       "Minimal downtime",
     ],
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76caa3e3?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop",
   },
   {
     id: 3,
@@ -39,7 +40,7 @@ const services = [
       "Surface prep included",
       "Quality guarantees",
     ],
-    image: "https://images.unsplash.com/photo-1578898866193-1d3f10e5e197?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=1400&auto=format&fit=crop",
   },
   {
     id: 4,
@@ -51,7 +52,7 @@ const services = [
       "Maintenance plans",
       "Extended warranties",
     ],
-    image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1200&auto=format&fit=crop",
+    image: "./repair.webp",
   },
   {
     id: 5,
@@ -63,7 +64,7 @@ const services = [
       "Coating application",
       "Lifespan extension",
     ],
-    image: "https://images.unsplash.com/photo-1513001901142-34f19b953564?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1691039923170-c275e01cce89?auto=format&fit=crop&w=1400&q=80",
   },
   {
     id: 6,
@@ -75,7 +76,7 @@ const services = [
       "Moisture barriers",
       "Long-lasting finish",
     ],
-    image: "https://images.unsplash.com/photo-1586605857561-8ee45cec73ec?q=80&w=1200&auto=format&fit=crop",
+    image: "./deck.jpg",
   },
 ];
 
@@ -122,19 +123,29 @@ export default function ServicesGrid() {
   {/* ✅ Light/white overlay for black text visibility */}
   <div className="absolute inset-0 bg-white/30"></div>
 
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    className="absolute z-10 text-center px-6 max-w-3xl mx-auto"
-  >
-    <h1 className="text-4xl md:text-6xl font-display font-bold text-black mb-6">
-      Our Services
-    </h1>
-    <p className="text-lg md:text-xl text-white">
-      Full range of professional painting services for residential and commercial projects
-    </p>
-  </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="absolute z-10 text-center px-6 max-w-3xl mx-auto flex flex-col items-center"
+>
+  <h1 className="text-4xl md:text-6xl font-display font-bold text-black mb-6">
+    Our Services
+  </h1>
+  <p className="text-lg md:text-xl text-gray-700 mb-8">
+    Full range of professional painting services for residential and commercial projects
+  </p>
+
+  {/* Get Quote Button */}
+  <Button asChild className="rounded-full bg-black border-primary px-8 py-4  text-primary text-lg flex items-center gap-3 hover:bg-primary hover:text-black transition-all duration-300">
+    <Link href="/quote" className="flex items-center">
+      {/* <Phone className="w-6 h-6" /> */}
+     Get Started<ArrowRight className="ml-2 w-4 md:w-5 h-4 md:h-5" />
+    </Link>
+  </Button>
+</motion.div>
+
+
 </section>
 
 
@@ -277,7 +288,7 @@ export default function ServicesGrid() {
                   // { title: "2-Year Warranty", desc: "Comprehensive coverage on all labor and materials. If peeling or blistering occurs, we fix it free." },
                   { title: "Quality Assurance", desc: "Three full coats when specified. No shortcuts. Every project meets our exacting standards." },
                   { title: "On-Time Completion", desc: "We deliver projects on schedule. Your time matters and we respect it." },
-                  { title: "Premium Materials", desc: "We use Sherwin-Williams, Benjamin Moore, and trusted high-quality paint products." },
+                  { title: "Premium Materials", desc: "We use Dulux, Resene, and trusted high-quality paint products." },
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
